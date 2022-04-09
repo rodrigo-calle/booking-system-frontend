@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Habitacion singular",
+            "price": "Desde S/.299",
+            "personas": 1,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Habitacion matrimonial Queen",
+            "price": "Desde S/.500",
+            "personas": 3,
+            "disponibles": 2,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Habitacion matrimonial",
+            "price": "Desde S/.499",
+            "personas": 2,
+            "disponibles": 1,
+            "image": "assets/img/habitaciones/habitacion1.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Habitacion familiar",
+            "price": "Desde S/.800",
+            "personas": 5,
+            "disponibles": 7,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Habitacion doble",
+            "price": "Desde S/.599",
+            "personas": 4,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion1.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Habitacion real",
+            "price": "Desde S/.2000",
+            "personas": 2,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Habitacion familiar",
+            "price": "Desde S/.800",
+            "personas": 5,
+            "disponibles": 7,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Habitacion doble",
+            "price": "Desde S/.599",
+            "personas": 4,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion1.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Habitacion real",
+            "price": "Desde S/.2000",
+            "personas": 2,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
+        }
+    ]
+}
