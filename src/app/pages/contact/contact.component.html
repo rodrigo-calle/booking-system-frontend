@@ -1,0 +1,36 @@
+<br/>
+<section class="container-fluid p-0 pt-4 pb-4">
+    <div class="container mt-5">
+        <h2 class="text-center">Contáctanos!</h2>
+        <p class="text-center text-muted fw-bold">Por favor, completa la siguiente información:</p>
+        <div class="container pt-4 pb-4 d-flex justify-content-between">
+            <div class="row">
+                <div class="col-6">
+                    <form [formGroup]="contactusForm" method="post">
+                        <div class="form-group">
+                            <input type="text" formControlName="nombre" placeholder="Ingrese nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" formControlName="apellido" placeholder="Ingrese apellidos" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" formControlName="correo" placeholder="Ingrese email" class="form-control"> 
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ingrese mensaje" formControlName="mensaje" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button (click)="_onSubmit()" class="btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                    <p>
+                        Validación de formulario: {{contactusForm.valid}}
+                    </p>
+                </div>
+                <div class="col-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.305506894135!2d-76.97595038561832!3d-12.02247614472143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5cf3cbe0de3%3A0x1af6434e550d9b49!2sResidencial%20Campoy!5e0!3m2!1ses!2spe!4v1649005797983!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
