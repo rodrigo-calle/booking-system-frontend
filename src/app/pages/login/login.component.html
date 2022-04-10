@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MyWeb</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Dark.css"> 
+    <link rel="stylesheet" href="/assets/css/Login-Form-Clean.css"> 
+    <link rel="stylesheet" href="/assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="/assets/css/Map-Clean.css"> 
+</head>
+
+<body id="page-top">
+<div class="login-dark" style="background-image: url(&quot;assets/img/backgrounds/recepcion-hotel.jpg&quot;);"> 
+    <form [formGroup]="loginForm" method="post" style="background-color: rgba(255,255,255,0.9);">
+        <h2 class="text-center" style="color: #23a2b3;font-size: 26px; margin-bottom:20px;">Login<br>Usuario</h2>
+        <div class="form-group">
+            <input class="form-control" type="text" formControlName="email" placeholder="Email" autocomplete="off" style="color: rgb(0,0,0);">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" formControlName="contrasena" placeholder="Contraseña" autocomplete="off" style="color: rgb(0,0,0);">
+        </div>
+
+        <div class="text-center">
+            <div class="form-group"><Li><label for="Guardar" style="color: rgb(0,0,0);font-size:x-small;"><input class="checkbox" type="checkbox" formControlName="datospersonales" name="datospersonales" autocomplete="off" style="color: rgb(0,0,0);"> Guardar Credenciales</label></Li><small class="form-text text-danger d-none">!</small></div>
+
+            <a href="register">Registrar</a>
+       
+       </div>
+
+        <div class="form-group text-center">
+            <button (click)="__onSubmit()" class="btn btn-primary" type="submit" style="background-color: #23a2b3;font-weight: normal;">Iniciar Sesión</button>
+        </div>
+
+</form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
+</body>
+
+</html>
