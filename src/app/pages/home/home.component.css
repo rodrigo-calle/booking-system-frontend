@@ -1,0 +1,57 @@
+.carousel {
+    height: 500px;
+}
+.carousel-item {
+    height: 500px;
+  }
+
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+    height: 500px;
+}
+
+.number-ball {
+    border: thin solid #0D6EFD;
+    position: absolute;
+    background-color: #fff;
+    z-index: 99;
+    margin: 0 auto;
+    margin-top: -38px;
+    width: 55px;
+    height: 55px;
+    border-radius: 55px;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-ball span {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.address-line {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 800px) {
+  .our-numbers {
+    display: flex;
+    flex-direction: column!important;
+  }
+
+  .our-numbers .number{
+    font-size: 40px!important;
+  }
+  .our-numbers .description-number {
+    font-size: 20px!important;
+  }
+}
