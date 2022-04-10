@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PackagesComponent } from './pages/packages/packages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     ReservaComponent,
     HomeComponent,
     RegisterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ContactComponent,
+    PackagesComponent
   ],
   imports: [
     BrowserModule,
