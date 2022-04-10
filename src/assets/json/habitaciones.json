@@ -71,6 +71,14 @@
             "personas": 2,
             "disponibles": 3,
             "image": "assets/img/habitaciones/habitacion2.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Habitacion real",
+            "price": "Desde S/.2000",
+            "personas": 2,
+            "disponibles": 3,
+            "image": "assets/img/habitaciones/habitacion2.jpg"
         }
     ]
 }

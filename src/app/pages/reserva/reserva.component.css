@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #85aedd;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: #afd6af;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fdcfcf;
+}
+
+.main {
+  grid-area: main;
+  background-color: #f5f5f5;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #8c96a0;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "navbar"  50px
+    "main"    auto
+    "sidebar" 100px
+    "footer"  100px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "sidebar main"   auto
+      "footer  footer" 100px /
+      30%    auto;
+  }
+}
+
+.container-reserva {
+    display: grid;
+    padding: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(max-width, 1fr));
+    grid-template-rows: repeat(3, 600px);
+    font-size: 5rem;
+  }
+
+  .container-reserva div {
+    color: white;
+    padding: 1rem;
+  }
+
+  .wrapper-reserva {
+    width: 20px;
+    height: 50px;
+    display: flex;
+    flex-direction: left;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .rcorners1-reserva {
+    border-radius: 25px;
+    border: 2px solid #878d80;
+    padding: 5px;
+    width: auto;
+    height: auto;
+  }
+
+  .rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #878d80;
+    padding: 20px;
+    width: auto;
+    height: auto;
+  }
+
+  .text-reserva {
+    margin: 10px;
+    font-size: xx-large;
+    color: #343534;
+  }
+
+  .name-habitacion {
+    font-size: xx-large;
+    font-style: italic;
+    color: #343534;
+  }
+
+  .cantidad-habitacion {
+    font-size: xx-small;
+    font-style: italic;
+    color: #343534;
+  }
+
+  .precio-habitacion {
+    font-size: xx-large;
+    padding: 0%;
+    color: #343534;
+  }
+
+  .numero-habitacion {
+    justify-content: right;
+  }
+
+  .column-reserva {
+    float: left;
+    width: 50%;
+    padding: 0px;
+  }
+
+  .column-menu {
+    width: auto;
+    height: auto;
+    min-height: 200px;
+    padding: 0px;
+  }
+
+  .row-reserva {
+    width: auto;
+  }
+
+  .row-reserva:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .button-eliminar {
+    background: #e62143;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto,
+      "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+    font-size: x-large;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 5px;
+    padding: 0.8em 1em;
+    text-align: center;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+    text-underline-offset: 1px;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    word-break: break-word;
+    border: 0;
+  }
+
+  .button-eliminar:active,
+  .button-eliminar:focus {
+    border-bottom-style: none;
+    border-color: #dadada;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 3px 3px inset;
+    outline: 0;
+  }
+
+  .button-eliminar:hover {
+    border-bottom-style: none;
+    border-color: #dadada;
+  }
+
+  .button-reservar {
+    background: #16c71f;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto,
+      "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+    font-size: x-large;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 5px;
+    padding: 0.8em 1em;
+    text-align: center;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+    text-underline-offset: 1px;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    word-break: break-word;
+    border: 0;
+  }
+
