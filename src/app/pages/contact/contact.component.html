@@ -1,0 +1,69 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Dark.css"> 
+    <link rel="stylesheet" href="/assets/css/Login-Form-Clean.css"> 
+    <link rel="stylesheet" href="/assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="/assets/css/Map-Clean.css"> 
+</head>
+
+<body id="page-top">
+    
+    <div class="login-dark" style="background-image: url(&quot;assets/img/backgrounds/recepcion-hotel.jpg&quot;); padding-top: 150px;"> 
+        
+            <div class="row">
+                <div class="col-6">
+                    
+                    <form [formGroup]="contactusForm" method="post">
+                        <h2 class="text-center" style="color: #23a2b3;font-size: 26px; margin-bottom:20px;">Contáctanos</h2>
+                        <div class="form-group">
+                            <input type="text" formControlName="nombre" placeholder="Ingrese nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" formControlName="apellido" placeholder="Ingrese apellidos" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" formControlName="correo" placeholder="Ingrese email" class="form-control"> 
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ingrese mensaje" formControlName="mensaje" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button (click)="_onSubmit()" class="btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                    <!--<p>
+                        Validación de formulario: {{contactusForm.valid}}
+                    </p>  -->
+                </div>
+                <div class="col-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.118260302873!2d-76.96509068561708!3d-12.10405574626342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c70ab77498c1%3A0xcce9f50642e7c684!2sUniversidad%20Peruana%20de%20Ciencias%20Aplicadas!5e0!3m2!1ses!2spe!4v1649567582936!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <!--  <div class="m-0" style="width: 45%;">
+                        <p style="text-align: justify;">Jr. Lima Mz I Lt 11 última cuadra, Oxapampa, Pasco - Perú
+                          Hoteles Heidinger es el único hotel de tres estrellas en Oxapampa, nuevo y moderno,
+                          cuenta con acabados de primera y áreas completamente de madera.
+                          Cuenta con 25 habitaciones dentro de las cuales
+                          hay habitaciones dobles, matrimoniales, triples, familiares y simples.</p>
+                          <p class="address-line">
+                            <img height="20px" width="20px" src="https://icongr.am/clarity/map-marker.svg?size=128&color=000000" alt="address">
+                            <span>Av. Siempre Viva, Lima, Lima, Perú</span>
+                          </p>
+                      </div>  -->
+                </div>
+            </div>
+  
+    </div>  
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
+</body>

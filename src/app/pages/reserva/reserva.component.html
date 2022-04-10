@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <link rel="stylesheet" href="reserva.component.css">
+</head>
+
+<body class="grid-container">
+  <nav class="navbar">
+    <!-- <div style="text-align: center;display: flex;"> -->
+      <button class="button-30" role="button">Seleccion de Habitaciones</button>
+      <button class="button-30" role="button">Confirmación</button>
+      <button class="button-30" role="button">Checkout</button>
+    <!-- </div> -->
+  </nav>
+  <aside class="sidebar">
+    <div *ngIf="habitacionesReservadas[0] != null" class="column-menu" style="color: #878d80">
+      <b>
+        <p style="font-size: x-large; width: auto; padding-bottom: 3%;">
+          Habitaciones seleccionadas
+        </p>
+      </b>
+      <div>
+        <div class="rcorners1-reserva" *ngFor="let r of habitacionesReservadas">
+          <p style="font-size: x-large">
+            {{ r.name }}({{ r.disponibles }})<button (click)="_deleteHabitacion(r)" class="button-eliminar">
+              Quitar
+            </button>
+          </p>
+        </div>
+        <button class="button-reservar">Confirmar selección</button>
+      </div>
+    </div>
+    <div>
+      Aqui empiezan los Filtros
+    </div>
+    <br>
+  </aside>
+
+  <article class="main">
+    <div *ngIf="habitaciones[0] != null" class="container-reserva">
+      <div class="rcorners2" *ngFor="let h of habitaciones">
+        <img class="img-fluid" src="{{ h.image }}" />
+        <div>
+          <p class="name-habitacion">
+            <b>{{ h.name }}</b>
+          </p>
+          <p class="precio-habitacion">{{ h.price }}</p>
+
+          <div style="text-align: center"><img src="../../../assets/img/iconos/person-icon.jpg" width="30" />{{
+            h.personas }} huespedes</div>
+
+          <div class="row">
+            <div class="column-reserva">
+              <div class="wrapper-reserva">
+                <p style="font-size: xx-large; padding-right: 10px ;color: #343534;">
+                  Reservar
+                </p>
+                <select style="font-size: x-large" (change)="_selectHabitacion($event, h)" class="numero-habitacion"
+                  name="numerohabitacion" id="numerohabitacion">
+                  <option style="font-size: x-large" *ngFor="let n of h.disponiblesArray">
+                    {{ n }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</body>
+
+</html>
