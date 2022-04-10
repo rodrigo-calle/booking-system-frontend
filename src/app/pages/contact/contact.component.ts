@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
   constructor(private fb: FormBuilder) { 
     
   }
-
+ 
   contactusForm = this.fb.group({
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],

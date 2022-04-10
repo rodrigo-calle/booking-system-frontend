@@ -5,13 +5,17 @@ import { RegisterComponent } from "./pages/register/register.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { AttractionsComponent } from "./pages/attractions/attractions.component";
+import { ContactComponent } from "./pages/contact/contact.component";
+import { PackagesComponent } from "./pages/packages/packages.component";
 
 const routes:Routes = [
     {path:'register',component:RegisterComponent},
     {path:'reserva',component:ReservaComponent},
     {path:'about-us',component: AboutUsComponent },
     { path: '', component: HomeComponent },
-    { path: 'attractions', component: AttractionsComponent }
+    { path: 'attractions', component: AttractionsComponent },
+    { path: 'contactus', component: ContactComponent },
+    { path: 'package-list', component: PackagesComponent}
 ];
 
 @NgModule({
