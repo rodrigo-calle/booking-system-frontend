@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .columnleft-reserva {
+      float: left;
+      width: 20%;
+      padding: 10px;
+    }
+
+    .columnright-reserva {
+      flex-grow: 1;
+      /* float: right;
+      width: 80%;
+      padding: 10px; */
+    }
+
+    @media screen and (min-width: 700px) {
+
+      .columnleft-reserva,
+      .columnright-reserva {
+        width: 100%;
+        height: 100vh;
+      }
+
+      .body {
+        width: fit-content;
+      }
+    }
+
+    .container-reserva {
+      display: grid;
+      padding: 1rem;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      grid-template-rows: repeat(3, 750px);
+      font-size: 5rem;
+    }
+
+    .container-reserva div {
+      color: white;
+      padding: 1rem;
+    }
+
+    .wrapper-reserva {
+      width: 20px;
+      height: 50px;
+      display: flex;
+      flex-direction: left;
+      justify-content: left;
+      align-items: center;
+    }
+
+    .icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    .rcorners1-reserva {
+      border-radius: 25px;
+      border: 2px solid #878d80;
+      padding: 5px;
+      width: auto;
+      height: auto;
+    }
+
+    .rcorners2 {
+      border-radius: 25px;
+      border: 2px solid #878d80;
+      padding: 20px;
+      width: auto;
+      height: auto;
+    }
+
+    .text-reserva {
+      margin: 10px;
+      font-size: xx-large;
+      color: #343534;
+    }
+
+    .name-habitacion {
+      font-size: xx-large;
+      font-style: italic;
+      color: #343534;
+    }
+
+    .cantidad-habitacion {
+      font-size: xx-small;
+      font-style: italic;
+      color: #343534;
+    }
+
+    .precio-habitacion {
+      font-size: xx-large;
+      padding: 0%;
+      color: #343534;
+    }
+
+    .numero-habitacion {
+      justify-content: right;
+    }
+
+    .column-reserva {
+      float: left;
+      width: 50%;
+      padding: 0px;
+    }
+
+    .column-menu {
+      width: auto;
+      height: auto;
+      min-height: 200px;
+      padding: 0px;
+    }
+
+    .row-reserva {
+      width: auto;
+    }
+
+    .row-reserva:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .button-eliminar {
+      background: #e62143;
+      border-radius: 11px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto,
+        "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+      font-size: x-large;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 5px;
+      padding: 0.8em 1em;
+      text-align: center;
+      text-decoration: none;
+      text-decoration-skip-ink: auto;
+      text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+      text-underline-offset: 1px;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 100%;
+      word-break: break-word;
+      border: 0;
+    }
+
+    .button-eliminar:active,
+    .button-eliminar:focus {
+      border-bottom-style: none;
+      border-color: #dadada;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 3px 3px inset;
+      outline: 0;
+    }
+
+    .button-eliminar:hover {
+      border-bottom-style: none;
+      border-color: #dadada;
+    }
+
+    .button-reservar {
+      background: #16c71f;
+      border-radius: 11px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto,
+        "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+      font-size: x-large;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 5px;
+      padding: 0.8em 1em;
+      text-align: center;
+      text-decoration: none;
+      text-decoration-skip-ink: auto;
+      text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+      text-underline-offset: 1px;
+      transition: all 0.2s ease-in-out;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 100%;
+      word-break: break-word;
+      border: 0;
+    }
+
+    .body {
+      background-color: #343534;
+      width: auto;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <div class="header" style="height: 10%"></div>
+  <div class="row">
+    <div class="columnleft-reserva-md-6" style="background-color: white">
+      <div class="row-reserva">
+        <div class="column-menu">
+          <b>
+            <br />
+            <p style="font-size: x-large">Filtros</p>
+          </b>
+        </div>
+      </div>
+    </div>
+    <div class="columnright-reserva-md-6" style="background-color: white">
+      <div class="precio-habitacion" style="text-align: center">
+        <p style="padding-top: 30px;">Habitaciones disponibles</p>
+      </div>
+      <main *ngIf="habitaciones[0] != null" class="container-reserva">
+        <div class="rcorners2" *ngFor="let h of habitaciones">
+          <img class="img-fluid" src="{{ h.image }}" />
+          <div>
+            <p class="name-habitacion">
+              <b>{{ h.name }}</b>
+            </p>
+            <p class="precio-habitacion">{{ h.price }}</p>
+            <div class="row">
+              <div style="padding-left: 0%" class="column-reserva">
+                <div style="padding-left: 0%" class="wrapper-reserva">
+                  <img class="icon" src="../../../assets/img/iconos/person-icon.jpg" />
+                  <span class="text-reserva">
+                    <p>{{ h.personas }}</p>
+                  </span>
+                </div>
+              </div>
+
+              <div class="column-reserva">
+                <div class="wrapper-reserva">
+                  <p style="font-size: xx-large; padding-right: 10px ;color: #343534;">
+                    Reservar
+                  </p>
+                  <select style="font-size: x-large" (change)="_selectHabitacion($event, h)" class="numero-habitacion"
+                    name="numerohabitacion" id="numerohabitacion">
+                    <option style="font-size: x-large" *ngFor="let n of h.disponiblesArray">
+                      {{ n }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div *ngIf="habitacionesReservadas[0] != null" class="column-menu" style="color: #878d80">
+        <b>
+          <p style="font-size: x-large; width: auto">
+            Habitaciones seleccionadas
+          </p>
+        </b>
+        <div>
+          <div class="rcorners1-reserva" *ngFor="let r of habitacionesReservadas">
+            <p style="font-size: x-large">
+              {{ r.name }}({{ r.disponibles }})<button (click)="_deleteHabitacion(r)" class="button-eliminar">
+                Quitar
+              </button>
+            </p>
+          </div>
+          <br />
+          <button class="button-reservar">Checkout</button>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="assets/js/agency.js"></script>
+</body>
+
+</html>
