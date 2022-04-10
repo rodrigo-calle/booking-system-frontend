@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+.burger-menu, .responsive-menu {
+  display: none;
+}
+.footer-styles {
+  background-color: #343534;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='88' viewBox='0 0 80 88' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 21.91V26h-2c-9.94 0-18 8.06-18 18 0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73 3.212-6.99 9.983-12.008 18-12.73V62h2c9.94 0 18-8.06 18-18 0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73-3.212 6.99-9.983 12.008-18 12.73zM54 58v4.696c-5.574 1.316-10.455 4.428-14 8.69-3.545-4.262-8.426-7.374-14-8.69V58h-5.993C12.27 58 6 51.734 6 44c0-7.732 6.275-14 14.007-14H26v-4.696c5.574-1.316 10.455-4.428 14-8.69 3.545 4.262 8.426 7.374 14 8.69V30h5.993C67.73 30 74 36.266 74 44c0 7.732-6.275 14-14.007 14H54zM42 88c0-9.94 8.06-18 18-18h2v-4.09c8.016-.722 14.787-5.738 18-12.73v7.434c-3.545 4.262-8.426 7.374-14 8.69V74h-5.993C52.275 74 46 80.268 46 88h-4zm-4 0c0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73v7.434c3.545 4.262 8.426 7.374 14 8.69V74h5.993C27.73 74 34 80.266 34 88h4zm4-88c0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73v-7.434c-3.545-4.262-8.426-7.374-14-8.69V14h-5.993C52.27 14 46 7.734 46 0h-4zM0 34.82c3.213-6.992 9.984-12.008 18-12.73V18h2c9.94 0 18-8.06 18-18h-4c0 7.732-6.275 14-14.007 14H14v4.696c-5.574 1.316-10.455 4.428-14 8.69v7.433z' fill='%233f3e40' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-body {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .footer-body div{
+    width: 90%;
+  }
+
+  .burger-menu {
+    background-color:#d5722ba3;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .burger-menu img {
+    height:60px;
+    width: 60px;
+  }
+
+  .responsive-menu {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(52, 53, 52, 0.764);
+    z-index: 998;
+    position: fixed;
+    top: 0;
+  }
+
+  .non-visible {
+    display: none;
+  }
+  .menu-responsive-list {
+    margin-top: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+  }
+  .menu-responsive-list .menu-responsive-item{
+    font-weight: 600;
+    font-size: 20px;
+    color:#d5722b;
+    border-bottom: thin solid #fff;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
