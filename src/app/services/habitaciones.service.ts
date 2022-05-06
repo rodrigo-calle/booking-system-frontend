@@ -21,7 +21,7 @@ export class HabitacionesService {
   }
 
   _insertReserva(data :any){
-    return this.http.post<any>('https://localhost:44309/api/reserva/insert', data);
+    return this.http.post<any>("https://localhost:44309/api/reserva/insert", data);
   }
 
 }
