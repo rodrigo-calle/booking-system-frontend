@@ -1,9 +1,8 @@
 export class Habitacion {
-    id!: number;
-    name!: String;
-    price!: String;
+    idhabitacion!: number;
+    idtipo!: number;
+    tiponombre!: String;
+    precio!: String;
     personas!: number;
-    disponibles!: number;
     image!: String;
-    disponiblesArray!: number[];
 }
