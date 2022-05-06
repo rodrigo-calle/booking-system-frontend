@@ -1,8 +1,9 @@
 import { Component, OnInit, Optional } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { Habitacion } from 'src/classes/Habitacion';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reserva',
@@ -19,13 +20,25 @@ export class ReservaComponent implements OnInit {
   habitacionesReservadas: Array<HabitacionAgrupadaJson> = [];
   habitacionesReservadasDesglosadas: Array<HabitacionAgrupadaJson> = [];
   resumenReserva: resumenReservaJson = {};
+  registroReserva: registroReservaServicio = {};
   pagConfirmacion = false;
   pagCheckout = false;
 
   constructor(
     private readonly rs: HabitacionesService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
+
+  userForm = this.fb.group({
+    loginusuario: ['', Validators.required],
+    passwordusuario: ['', Validators.required],
+    idperfil: [0, Validators.required],
+    nombres: ['', Validators.required],
+    apellidopaterno: ['', Validators.required],
+    apellidomaterno: ['', Validators.required],
+    documentoidentidad: ['', Validators.required]
+  })
 
   _selectHabitacion(event: any, habitacionReservada: HabitacionAgrupadaJson): void {
 
@@ -225,7 +238,19 @@ export class ReservaComponent implements OnInit {
   }
 
   _registrar_reserva(){
-    this.rs._insertReserva(this.habitacionesReservadasDesglosadas);
+
+    //habitacionReservada.personasArray = [];
+    this.registroReserva.idreserva = 1;
+    this.registroReserva.data! = this.habitacionesReservadasDesglosadas;
+
+    this.rs._insertReserva(this.registroReserva).subscribe((rest: any) => {
+      if (rest.isSuccess) {
+        alert("Su reserva se creo con el ID: " + rest.data.id);
+        this.router.navigate(['contactus']);
+      } else {
+        alert("Error al crear la reserva"); 
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -260,6 +285,12 @@ interface resumenReservaJson {
   totalAdultos?: number
   totalNinos?: number
 }
+
+interface registroReservaServicio {
+  idreserva?: number
+  data?: HabitacionAgrupadaJson[]
+}
+
 
 
 
