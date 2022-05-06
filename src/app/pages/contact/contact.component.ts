@@ -8,10 +8,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { 
-    
+  constructor(private fb: FormBuilder) {
+
   }
- 
+
   contactusForm = this.fb.group({
     nombre: ['', Validators.required],
     apellido: ['', Validators.required],
@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
     if(this.contactusForm.valid){
 
     }else{
-      alert("Complete los datos");
+      //alert("Complete los datos");
     }
   }
 
