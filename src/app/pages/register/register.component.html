@@ -19,42 +19,21 @@
 </head>
 
 <body id="page-top">
-    <!-- <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav" style="opacity: 1;background-color: rgba(52,58,64,0.75);">
-        <div class="container"><a class="navbar-brand" href="#page-top" style="color: rgb(255,165,85);">J&amp;J</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(255,165,85);"><i class="fa fa-bars" style="color: rgba(255,255,255,0.75);"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="/" style="color: rgb(255,165,85);">PROYECTOS</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio" style="color: rgb(255,165,85);">Portfolio</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about" style="color: rgb(255,165,85);">About</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#team" style="color: rgb(255,165,85);">Team</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact" style="color: rgb(255,165,85);">Contact</a></li>
-                </ul><a class="btn btn-primary text-black-50 border-dark" role="button" href="#" style="font-family: Montserrat, sans-serif;font-weight: normal;background-color: rgb(255,165,85);">Acceder</a></div>
-        </div>
-    </nav> -->
+
     <div class="login-dark" style="background-image: url(&quot;assets/img/backgrounds/recepcion-hotel.jpg&quot;);"> 
         <form [formGroup]="registerForm" method="post" style="background-color: rgba(255,255,255,0.9);">
             <h2 class="text-center" style="color: #23a2b3;font-size: 26px; margin-bottom:20px;">Registrar<br>Usuario</h2>
-            <div class="form-group"><input class="form-control" type="text" formControlName="email" name="email" placeholder="Email" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar un email válido</small></div>
-            <div class="form-group"><input class="form-control" type="password" formControlName="contrasena" name="contrasena" placeholder="Contraseña" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar una contraseña</small></div>
-            <div class="form-group"><input class="form-control" type="text" formControlName="apellidos" name="apellidos" placeholder="Apellidos" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar apellidos</small></div>
+            <div class="form-group"><input class="form-control" type="text" formControlName="loginusuario" name="email" placeholder="Email" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar un email válido</small></div>
+            <div class="form-group"><input class="form-control" type="password" formControlName="passwordusuario" name="contrasena" placeholder="Contraseña" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar una contraseña</small></div>
+            <div class="form-group"><input class="form-control" type="text" formControlName="apellidopaterno" name="apellidos" placeholder="Apellido Paterno" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar apellido paterno</small></div>
+            <div class="form-group"><input class="form-control" type="text" formControlName="apellidomaterno" name="apellidos" placeholder="Apellido Materno" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar apellido materno</small></div>
             <div class="form-group"><input class="form-control" type="text" formControlName="nombres" name="nombres" placeholder="Nombres" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar nombres</small></div>  
-            <div class="form-group"><input class="form-control" type="text" formControlName="dni" name="dni" placeholder="DNI" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar un DNI válido</small></div>
-            <div class="form-group"><Li><label for="datospersonales" style="color: rgb(0,0,0);font-size:x-small;"><input class="checkbox" type="checkbox" formControlName="datospersonales" name="datospersonales" autocomplete="off" style="color: rgb(0,0,0);"> Acepto las políticas de datos personales</label></Li><small class="form-text text-danger d-none">!</small></div>
-                
-            <div class="form-group text-center"><button class="btn btn-primary" type="submit" style="background-color: #23a2b3;font-weight: normal;">Registrar</button></div>
+            <div class="form-group"><input class="form-control" type="text" formControlName="documentoidentidad" name="dni" placeholder="DNI" autocomplete="off" style="color: rgb(0,0,0);"><small class="form-text text-danger d-none">Ingresar un DNI válido</small></div>
+            <div class="form-group"><Li><label for="datospersonales" style="color: rgb(0,0,0);font-size:x-small;"><input class="checkbox" type="checkbox" formControlName="datospersonales" name="datospersonales" autocomplete="off" style="color: rgb(0,0,0);"> Acepto las políticas de datos personales</label></Li><small class="form-text text-danger d-none">!</small></div>              
+            <div class="form-group text-center"><button (click)="_onSubmit()" class="btn btn-primary" type="submit" style="background-color: #23a2b3;font-weight: normal;">Registrar</button></div>
     </form>
     </div>
-   <!--  <div class="footer-dark" style="padding: 0px;">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col item social"><a href="https://www.facebook.com/" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/" target="_blank"><i class="icon ion-social-twitter"></i></a><a href="https://www.linkedin.com/" target="_blank"><i class="icon ion-social-linkedin"></i></a></div>
-                </div>
-                <p class="copyright">J&amp;J © 2021</p>
-            </div>
-        </footer>
-    </div> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
