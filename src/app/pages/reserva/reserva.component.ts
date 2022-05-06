@@ -60,7 +60,7 @@ export class ReservaComponent implements OnInit {
   }
 
   _obtenerHabitaciones() {
-    this.habitacionesJson = this.rs._getHabitaciones();
+    //this.habitacionesJson = this.rs._getHabitaciones();
   }
 
   _desglosar_Habitaciones() {
