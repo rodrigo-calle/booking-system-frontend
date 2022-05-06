@@ -2,70 +2,135 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grid</title>
-  <link rel="stylesheet" href="reserva.component.css">
+  <link rel="stylesheet" href="reserva.component.css" />
 </head>
 
 <body class="grid-container">
   <nav class="navbar">
     <!-- <div style="text-align: center;display: flex;"> -->
-      <button class="button-30" role="button">Seleccion de Habitaciones</button>
-      <button class="button-30" role="button">Confirmación</button>
-      <button class="button-30" role="button">Checkout</button>
+    <button (click)="_deshacer_seleccion()" class="{{ pagConfirmacion ? 'button-30' : 'button-30-step' && pagCheckout ? 'button-30' : 'button-30-step' }}"
+      role="button">
+      Seleccion de Habitaciones
+    </button>
+    <button (click)="_confirmar_seleccion()" class="{{ pagConfirmacion ? 'button-30-step' : 'button-30' }}"
+      role="button">
+      Confirmación
+    </button>
+    <button (click)="_confirmar_reserva()" class="{{ pagCheckout ? 'button-30-step' : 'button-30' }}" role="button">Checkout</button>
     <!-- </div> -->
   </nav>
   <aside class="sidebar">
-    <div *ngIf="habitacionesReservadas[0] != null" class="column-menu" style="color: #878d80">
-      <b>
-        <p style="font-size: x-large; width: auto; padding-bottom: 3%;">
-          Habitaciones seleccionadas
-        </p>
-      </b>
-      <div>
-        <div class="rcorners1-reserva" *ngFor="let r of habitacionesReservadas">
-          <p style="font-size: x-large">
-            {{ r.name }}({{ r.disponibles }})<button (click)="_deleteHabitacion(r)" class="button-eliminar">
-              Quitar
-            </button>
+    <div *ngIf="pagConfirmacion == false && pagCheckout == false">
+      <div *ngIf="habitacionesReservadas[0] != null" class="column-menu" style="color: #878d80">
+        <b>
+          <p style="font-size: x-large; width: auto; padding-bottom: 3%">
+            Habitaciones seleccionadas
           </p>
+        </b>
+        <div>
+          <div class="rcorners1-reserva" *ngFor="let r of habitacionesReservadas">
+            <p style="font-size: x-large">
+              {{ r.tiponombre }}({{ r.disponibles }})<button (click)="_deleteHabitacion(r)" class="button-eliminar">
+                Quitar
+              </button>
+            </p>
+          </div>
+          <button (click)="_confirmar_seleccion()" class="button-reservar">
+            Confirmar selección
+          </button>
         </div>
-        <button class="button-reservar">Confirmar selección</button>
+      </div>
+      <div>
+        <label for="dateFrom">Desde</label>
+        <input type="date" name="dateofbirth" id="dateFrom" />
+      </div>
+      <div>
+        <label for="dateTo">Hasta</label>
+        <input type="date" name="dateofbirth" id="dateTo" />
+      </div>
+      <br />
+      <div class="card-body text-center">
+        <button href="#" class="btn btn-primary">Filtrar</button>
+      </div>
+      <br />
+    </div>
+    <div *ngIf="pagConfirmacion == true">
+      <div *ngIf="habitacionesReservadas[0] != null" class="column-menu" style="color: #878d80">
+        <b>
+          <p style="font-size: x-large; width: auto; padding-bottom: 3%">
+            Resumen reserva
+          </p>
+        </b>
+        <p style="font-size: x-large">
+          Habitaciones: {{ resumenReserva.totalHabitaciones }}
+        </p>
+        <p style="font-size: x-large">
+          Adultos: {{ resumenReserva.totalAdultos }}
+        </p>
+        <p style="font-size: x-large">
+          Niños: {{ resumenReserva.totalNinos }}
+        </p>
+        <div>
+          <button (click)="_confirmar_reserva()" class="button-reservar">
+            Confirmar Reserva
+          </button>
+        </div>
       </div>
     </div>
-    <div>
-      <label for="dateFrom">Desde</label>
-      <input type="date" name="dateofbirth" id="dateFrom"> 
+    <div *ngIf="pagCheckout == true">
+      <div>
+        <b>
+          <p style="font-size: x-large; width: auto; padding-bottom: 3%">
+            Finalizar reserva
+          </p>
+        </b>
+        <div>
+          <input type="radio" id="huey" name="drone" value="huey"
+                 checked>
+          <label for="huey">Tarjeta de Credito<img src="../../../assets/img/iconos/visa-icon.png" width="30"/></label> 
+        </div>
+        <div>
+          <input type="radio" id="dewey" name="drone" value="dewey">
+          <label for="dewey">Pago Efectivo<img src="../../../assets/img/iconos/pago-efectivo.png" width="30"/></label>
+        </div>
+        <div>
+          <input type="radio" id="louie" name="drone" value="louie">
+          <label for="louie">Paypal<img src="../../../assets/img/iconos/PayPal-icon.png" width="30"/></label>
+        </div>
+        <div>
+          <button (click)="_registrar_reserva()" class="button-reservar">
+            Pagar
+          </button>
+        </div>
+      </div>
     </div>
-    <div>
-      <label for="dateTo">Hasta</label>
-      <input type="date" name="dateofbirth" id="dateTo"> 
-    </div>
-    <br>
-    <div class="card-body text-center">
-      <button href="#" class="btn btn-primary">Filtrar</button>
-    </div>
-    <br>
   </aside>
 
   <article class="main">
-    <div *ngIf="habitaciones[0] != null" class="container-reserva">
+    <div *ngIf="habitaciones[0] != null && pagConfirmacion == false && pagCheckout == false" class="container-reserva">
       <div class="rcorners2" *ngFor="let h of habitaciones">
         <img class="img-fluid" src="{{ h.image }}" />
         <div>
           <p class="name-habitacion">
-            <b>{{ h.name }}</b>
+            <b>{{ h.tiponombre }}</b>
           </p>
-          <p class="precio-habitacion">{{ h.price }}</p>
+          <p class="precio-habitacion">Desde S/{{ h.precio }}</p>
 
-          <div style="text-align: center"><img src="../../../assets/img/iconos/person-icon.jpg" width="30" />{{
-            h.personas }} huespedes</div>
+          <div style="text-align: center">
+            <img src="../../../assets/img/iconos/person-icon.jpg" width="30" />{{ h.personas }} huespedes
+          </div>
 
           <div class="row">
             <div class="column-reserva">
               <div class="wrapper-reserva">
-                <p style="font-size: xx-large; padding-right: 10px ;color: #343534;">
+                <p style="
+                      font-size: xx-large;
+                      padding-right: 10px;
+                      color: #343534;
+                    ">
                   Reservar
                 </p>
                 <select style="font-size: x-large" (change)="_selectHabitacion($event, h)" class="numero-habitacion"
@@ -80,8 +145,59 @@
         </div>
       </div>
     </div>
+    <div *ngIf="habitacionesReservadasDesglosadas[0] != null && pagConfirmacion == true || pagCheckout == true" class="container-reserva">
+      <table class="table" style="margin: 0px">
+        <thead style="
+              background-color: rgba(52, 58, 64, 0.75);
+              color: rgb(255, 255, 255);
+            ">
+          <tr>
+            <th class="align-middle">Habitación</th>
+            <th class="align-middle">Huespedes</th>
+            <th class="align-middle"><strong>Adultos</strong><br /></th>
+            <th class="align-middle"><strong>Niños</strong><br /></th>
+            <th class="align-middle"><strong></strong><br /></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of habitacionesReservadasDesglosadas">
+            <td class="align-middle">
+              <img style="width: 200px;" class="img-fluid" src="{{ r.image }}" />{{ " " + r.tiponombre }}
+            </td>
+            <td class="align-middle">
+              <em><img src="../../../assets/img/iconos/person-icon.jpg" width="30" />{{ r.personas }}
+                huespedes</em><br/>
+            </td>
+            <td *ngIf="pagCheckout == false" class="align-middle">
+              <select (change)="_anadirAdultos($event, r)"style="font-size: large" class="numero-habitacion" name="numerohabitacion" id="numerohabitacion">
+                <option style="font-size: large" *ngFor="let n of r.personasArray">
+                  {{ n }}
+                </option>
+              </select>
+            </td>
+            <td *ngIf="pagCheckout == true" class="align-middle">
+              {{r.adultos?r.adultos:0}}
+            </td>
+            <td *ngIf="pagCheckout == false" class="align-middle">
+              <select (change)="_anadirNinos($event, r)" style="font-size: large" class="numero-habitacion" name="numerohabitacion" id="numerohabitacion">
+                <option style="font-size: large" *ngFor="let n of r.personasArray">
+                  {{ n }}
+                </option>
+              </select>
+            </td>
+            <td *ngIf="pagCheckout == true" class="align-middle">
+              {{r.ninos?r.ninos:0}}
+            </td>
+            <td *ngIf="pagCheckout == false" class="align-middle">
+              <button (click)="_deleteHabitacion(r)" class="button-eliminar">
+                X
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </article>
-
 </body>
 
 </html>
