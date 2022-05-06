@@ -20,7 +20,8 @@ const routes:Routes = [
     { path: 'login', component:LoginComponent},
     { path: 'listadohabitaciones', component:ListadohabitacionesComponent},
     { path: 'contactus', component: ContactComponent },
-    { path: 'package-list', component: PackagesComponent}
+    { path: 'package-list', component: PackagesComponent},
+    { path: 'reserva/:idpaquete', component: ReservaComponent }
 ];
 
 @NgModule({

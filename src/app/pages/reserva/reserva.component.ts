@@ -1,6 +1,8 @@
 import { Component, OnInit, Optional } from '@angular/core';
 import { HabitacionesService } from 'src/app/services/habitaciones.service';
 import { Habitacion } from 'src/classes/Habitacion';
+import { ActivatedRoute, Params } from '@angular/router';
+import { PaquetesService } from 'src/app/services/paquetes.service';
 
 @Component({
   selector: 'app-reserva',
@@ -18,6 +20,8 @@ export class ReservaComponent implements OnInit {
 
   constructor(
     private readonly rs: HabitacionesService,
+    private readonly ps: PaquetesService,
+    private ar: ActivatedRoute
   ) { }
 
   _selectHabitacion(event: any, habitacionReservada: Habitacion): void {
@@ -78,12 +82,44 @@ export class ReservaComponent implements OnInit {
 
         this.habitaciones.push(habitacion);
       });
+      console.log(this.habitacionesReservadas);
     }
+  }
+
+  _obtenerPaquete(id: number){
+    const params = "?id=" + id;
+    this.ps.__be_obtener_paquete(params).subscribe((rest: any) => {
+      if (rest.data.habitaciones != null) {
+        rest.data.habitaciones.forEach((item: any) => {
+          var habitacion = new Habitacion();
+          habitacion.disponiblesArray = [];
+          habitacion.id = item.idhabitacion;
+          habitacion.name = item.tiponombre;
+          habitacion.personas = item.personas;
+          habitacion.price = item.precio;
+          habitacion.disponibles = item.cantidad;
+
+          for (let i = 0; i <= item.cantidad; i++) {
+            habitacion.disponiblesArray.push(i);
+          }
+
+          this.habitacionesReservadas.push(habitacion);
+        });
+      }
+
+      console.log(this.habitacionesReservadas);
+    })
   }
 
   ngOnInit(): void {
     this._obtenerHabitaciones();
     this._desglosar_Habitaciones();
+
+    this.ar.params.subscribe((p: Params) => {
+      if(p["idpaquete"]) {
+        this._obtenerPaquete(p["idpaquete"]);
+      }
+    })
   }
 }
 
