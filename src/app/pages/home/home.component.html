@@ -54,46 +54,20 @@
         <p class="text-center text-muted fw-bold">Nuestas habitaciones estrellas, se el primero en separarlas</p>
         <div class="container pt-4 pb-4 d-flex justify-content-between">
           <div class="row">
-            <div class="col-sm-6 mb-3">
+
+            <div class="col-sm-6 mb-3" *ngFor="let habitacion of habitaciones">
               <div class="card">
-                <img src="../../../assets/img/room-one.jpg" class="card-img-top" alt="...">
+                <img src="{{habitacion.image}}" style="height: 350px;" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Ver detalles</a>
+                  <h5 class="card-title">{{habitacion.tiponombre}}</h5>
+                  <p class="card-text">Hermosa Habitación ideal para {{habitacion.personas}}.</p>
+                  <a class="btn btn-secondary btn-lg" disabled>S/.{{habitacion.precio}}</a>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 mb-3">
-              <div class="card">
-                <img src="../../../assets/img/room-two.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-              <div class="card">
-                <img src="../../../assets/img/room-trhee.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-              <div class="card">
-                <img src="../../../assets/img/room-four.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-              </div>
-            </div>
+
+
+
           </div>
         </div>
     </div>
@@ -117,54 +91,48 @@
     <div class="container mt-5 text-center">
         <h2 class="text-center">¿Quienes Somos?</h2>
         <p class="mt-4 " style="line-height: 30px; width: 60%; margin: 0 auto;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             Soluta suscipit quaerat nostrum tempora, eligendi saepe
-             dicta rem explicabo dignissimos deserunt minus sapiente
-            optio, illum illo perspiciatis praesentium consequuntur
-            magni nisi. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Magni vel odio, vero, voluptate
-            deserunt autem quaerat odit, ea sapiente consectetur
-            ullam eum eveniet dolorum dolore nobis sit ab aliquam</p>
+          Nosotros sabemos que un ambiente ideal para la estadia de nuestros clientes es
+           parte de su viaje, por este motivo le ofrecemos un lugar donde la elegancia,
+           el confort y la modernidad se complementan con un trato personalizado y un servicio
+           de primera que harán de su estadía la clave de la mejor experiencia. </p>
     </div>
     <div class="container-fluid mt-5 text-center">
         <h2 class="text-center">¿Que dicen nuestros clientes?</h2>
-        <div class="row container mt-5" style="margin: 15px auto;">
-            <div class="col-sm mb-4">
-              <div class="card" style="border-radius: 54px;">
-                  <img class="mt-3" style="margin: 0 auto;" height="130px" width="130px" src="https://icongr.am/fontawesome/universal-access.svg?size=128&color=000000" alt="user">
-                <div class="card-body">
-                  <h5 class="card-title">-Nombre de Cliente-</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; ">
+          <div class="col-sm m-4" >
+            <div class="card" style="border-radius: 54px;">
+            <img class="mt-3" style="margin: 0 auto;" height="130px" width="130px" src="https://icongr.am/fontawesome/universal-access.svg?size=128&color=000000" alt="user">
+              <div class="card-body">
+                <h5 class="card-title">-Sebastian Silva-</h5>
+                <p class="card-text">Excelente servicio de habitación, de los mejores que tuve. Considerando que conozco muchos hoteles.</p>
               </div>
             </div>
           </div>
-          <div class="col-sm mb-4" >
+          <div class="col-sm m-4" >
               <div class="card" style="border-radius: 54px;">
               <img class="mt-3" style="margin: 0 auto;" height="130px" width="130px" src="https://icongr.am/fontawesome/universal-access.svg?size=128&color=000000" alt="user">
                 <div class="card-body">
-                  <h5 class="card-title">-Nombre de Cliente-</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <h5 class="card-title">-Mariana Balladares-</h5>
+                  <p class="card-text">La habitación matrimonial y los servicios a la habitación fueron los mejores</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm m-4" >
+              <div class="card" style="border-radius: 54px;">
+              <img class="mt-3" style="margin: 0 auto;" height="130px" width="130px" src="https://icongr.am/fontawesome/universal-access.svg?size=128&color=000000" alt="user">
+                <div class="card-body">
+                  <h5 class="card-title">-Lucas Castillo-</h5>
+                  <p class="card-text">Volvería mil veces a hospedarme aqui. Fue una de mis mejores expericias.</p>
                 </div>
               </div>
             </div>
         </div>
-  
+
+      </div>
+
   <div class="mt-5">
-      <h2 class="text-center mb-5">Pasos Para Realizar una Reserva</h2>
-      <div class="row container mt-5" style="margin: 15px auto;">
-          <div class="col-sm mb-5" style="position: relative;">
-              <div class="number-ball">
-                  <span class="number-ball-text">1</span>
-              </div>
-             <div class="card" style="border-radius: 7px;">
-                  <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-              </div>
-          </div>
-    </div>
+
     <div class="mt-5">
         <h2 class="text-center mb-5">Pasos Para Realizar una Reserva</h2>
         <div class="row container mt-5" style="margin: 15px auto;">
@@ -192,17 +160,19 @@
                 </div>
             </div>
             </div>
-            <div class="col-sm mb-5"  style="position: relative;" >
-                <div class="number-ball">
-                    <span class="number-ball-text">3</span>
-                </div>
-                <div class="card" style="border-radius: 7px;">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                </div>
-            </div>
+            <div class="col-sm mb-5"  style="position: relative;">
+              <div class="number-ball">
+                  <span class="number-ball-text">3</span>
+              </div>
+            <div class="card" style="border-radius: 7px; height: 250px;">
+              <div class="card-body text-center ">
+                <h5 class="card-title">Elige tus preferencias y reserva</h5>
+                <p class="card-text">La habitaciones cuentan con diversos servicios.
+                  Deberás seleccionar tu habitación según tus preferencias.</p>
+
+              </div>
+          </div>
+          </div>
             <div class="col-sm mb-5"  style="position: relative;" >
                 <div class="number-ball">
                     <span class="number-ball-text">4</span>
@@ -228,14 +198,12 @@
           referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="m-0" style="width: 45%;">
-          <p style="text-align: justify;">Jr. Lima Mz I Lt 11 última cuadra, Oxapampa, Pasco - Perú
-            Hoteles Heidinger es el único hotel de tres estrellas en Oxapampa, nuevo y moderno,
-            cuenta con acabados de primera y áreas completamente de madera.
-            Cuenta con 25 habitaciones dentro de las cuales
-            hay habitaciones dobles, matrimoniales, triples, familiares y simples.</p>
+          <p style="text-align: justify;">Jr. Heidinger Mz I Lt 11 última cuadra Los Pinos, Oxapampa, Pasco - Perú
+          El hotel es el único hotel de cuatro estrellas en Oxapampa, nuevo y moderno, cuenta con acabados de primera y áreas completamente de madera.
+             Cuenta con 25 habitaciones dentro de las cuales hay habitaciones dobles, matrimoniales, triples, familiares y simples..</p>
             <p class="address-line">
               <img height="20px" width="20px" src="https://icongr.am/clarity/map-marker.svg?size=128&color=000000" alt="address">
-              <span>Av. Siempre Viva, Lima, Lima, Perú</span>
+              <span>Jr. Heidinger, Oxapampa, Pasco, Perú</span>
             </p>
         </div>
       </div>
