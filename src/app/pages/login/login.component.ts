@@ -12,11 +12,11 @@ export class LoginComponent implements OnInit {
 
   isLoading = false;
 
-  constructor( 
+  constructor(
     private fb:FormBuilder,
     private loginService: LoginService,
     private router: Router
-  ) { } 
+  ) { }
 
   loginForm = this.fb.group({
     email: ['',[Validators.required,Validators.email]],
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
       this.isLoading = true;
       console.log(this.loginForm.value);
       var request = {
-        user: 'aaa',
-        password: 'asdasd'
+        usr: this.loginForm.controls['email'].value,
+        pwd: this.loginForm.controls['contrasena'].value
       }
       var response = await this.loginService.login(request);
       if (response.isSuccess) {
